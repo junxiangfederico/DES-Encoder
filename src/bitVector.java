@@ -1,3 +1,4 @@
+package src;
 import java.util.*;
 
 /**
@@ -26,7 +27,8 @@ import java.util.*;
  * 
  * IR(size, positions): size >= 0
  *                      positions != null && 
- *                      for {p_1, ..., p_k}, p_i >= 0
+ *                      for {p_1, ..., p_k}, p_i >= 0 && p_i < 32
+ *                      
  */
 public class bitVector {
 
@@ -50,6 +52,11 @@ public class bitVector {
     public void addPosition(int x){
 
         if (!positions.contains(x)) positions.add(x);
+    }
+
+    public int getBit(int x){
+        if (positions.contains(x)){ return 1;}
+        return 0;
     }
 
     public String getRep(){
