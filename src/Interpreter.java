@@ -16,19 +16,22 @@ public class Interpreter {
         Set<Integer> v = new HashSet<>();
         v.add(6);
         v.add(1);
-        v.add(0);
+        v.add(1);
         v.add(31);
-        v.add(18);
+        v.add(17);
         v.add(19);
-        v.add(10);
+        v.add(16);
         bitVector c = new bitVector(32, v);
         XOROperator xor = new XOROperator();
 
-        System.out.println(b.getRep());
+        System.out.println("b: " + b.getRep());
 
-        System.out.println(c.getRep());
+        System.out.println("c: " +c.getRep());
 
-
-        System.out.println(xor.compareTo(c, b).getRep());
+        bitVector d;
+        d = c.subSet(16, 1);
+        System.out.println(d.getRep());
+        d = c.subSet(16, 17);
+        System.out.println(d.getRep());
     }
 }
