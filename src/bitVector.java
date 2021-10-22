@@ -93,6 +93,27 @@ public class bitVector {
         bitVector a = new bitVector(size, s);
         return a;
     }
+
+    public static bitVector bitVectorFromInt(int x){
+        String s = Integer.toBinaryString(x);
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < s.length(); i++){
+            if (s.charAt(i) == '1') set.add(i+1);
+        }
+        bitVector b = new bitVector(s.length(), set);
+        return b;
+    }
+
+    public static bitVector combineWith(bitVector b, bitVector c){
+        Set<Integer> s = new HashSet<>();
+        s.addAll(b.getPositions());
+        int newsize = b.getSize() + c.getSize();
+        for (int i : c.getPositions()){
+            s.add(i + b.getSize());
+        }
+        b = new bitVector(newsize, s);
+        return b;
+    }
     
     public String getRep(){
         String output = "";

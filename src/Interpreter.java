@@ -33,5 +33,10 @@ public class Interpreter {
         System.out.println(d.getRep());
         d = c.subSet(16, 17);
         System.out.println(d.getRep());
+
+        Feistel f = new Feistel(c,c);
+        //System.out.println(Feistel.Expander(c).getRep());
+        System.out.println(bitVector.combineWith(c, c).getRep());
+
     }
 }
