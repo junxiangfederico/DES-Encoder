@@ -14,7 +14,7 @@ DES uses block sizes and keys of 64 bits, however:
 DES is a 16 rounds Feistel cipher, which means that the encryption mechanisms is permutated 16 times using the Feistel function.
 
 ## How is data encrypted with DES?  
-<img src="/assets/images/desip.png" style = "max-width: 40%;">  
+<img src="https://user-images.githubusercontent.com/72081655/138575494-02165262-87dd-459d-959e-c82ea686b1d0.png" width=40% height=40%>  
 1) Inputs first pass through an "Initial Permutation". (IP in "Figure 1")
 2) The 64 permutated bits are split into 2, 32 bits on the left and 32 bits on the right.
 3) These left and right bits are permutated with 16 Feistel rounds, using the input key  
@@ -23,15 +23,15 @@ DES is a 16 rounds Feistel cipher, which means that the encryption mechanisms is
 The resulting 64 bits are the output of DES.
 
 
-<img src="/assets/images/des.png" style = "max-width: 40%;">
+<img src="/assets/images/des.png" width=40% height=40%>
 
 
 3.1) As previously said, 8 of the 64 key bits are used for error detection and correction.
 Keys are split once again in 2 halfs, and produced for each rounds using a permutation/contraction function, which permutates and reduces the number of bits (from 56 to 48).
 The shifted halfs are the used as inputs for the next key generation round.  
-<img src="/assets/images/key.png" style = "max-width: 40%;">
+<img src="/assets/images/key.png" width=40% height=40%>
 
 
 
 ## So how does it all come together?  
-<img src="/assets/images/totdes.png" style = "max-width: 40%;">
+<img src="/assets/images/totdes.png" width=40% height=40%>
