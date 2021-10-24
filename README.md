@@ -14,7 +14,7 @@ DES uses block sizes and keys of 64 bits, however:
 DES is a 16 rounds Feistel cipher, which means that the encryption mechanisms is permutated 16 times using the Feistel function.
 
 ## How is data encrypted with DES?  
-![An general overview of of DES | Figure 1](/assets/images/des.png)  
+<img src="/assets/images/desip.png" style = "max-width: 40%;">  
 1) Inputs first pass through an "Initial Permutation". (IP in "Figure 1")
 2) The 64 permutated bits are split into 2, 32 bits on the left and 32 bits on the right.
 3) These left and right bits are permutated with 16 Feistel rounds, using the input key  
