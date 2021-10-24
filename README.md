@@ -12,10 +12,8 @@ In 1997 the DESCHALL Project publicly break a message encrypted using DES.
 DES uses block sizes and keys of 64 bits, however:
 - keys of 64 bits have 8 bits dedicated to error-code correction and detection making the effective key size long 56 bits.
 
-
+## How is data encrypted with DES?
 ![An general overview of of DES | Figure 1](/assets/images/des.png)
-![An overview of the plaintex side of DES](/assets/images/des.png)
-How is data encrypted with DES?
 1) Inputs first pass through an "Initial Permutation". (IP in "Figure 1")
 2) The 64 permutated bits are split into 2, 32 bits on the left and 32 bits on the right.
 3) These left and right bits are permutated with 16 Feistel rounds, using the input key
@@ -23,10 +21,13 @@ How is data encrypted with DES?
 4) After 16 Feistel rounds are applied, the output left and rights bits are united once again, and permutated using the Inverse of the "Initial Permutation".
 The resulting 64 bits are the output of DES.
 
-![An overview of the key side of DES](/assets/images/key.png)
+![An overview of the plaintex side of DES](/assets/images/des.png)
+
+
 3.1) As previously said, 8 of the 64 key bits are used for error detection and correction.
 Keys are split once again in 2 halfs, and produced for each rounds using a permutation/contraction function, which permutates and reduces the number of bits (from 56 to 48).
 The shifted halfs are the used as inputs for the next key generation round.
+![An overview of the key side of DES](/assets/images/key.png)
 
 ## So how does it all come together?
 ![An overview of the of DES](/assets/images/totdes.png)
