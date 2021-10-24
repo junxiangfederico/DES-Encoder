@@ -11,6 +11,17 @@ public class Tests {
         s.add(19);
         s.add(4);
         s.add(2);
+        s.add(19);
+        s.add(4);
+        s.add(2);s.add(19);
+        s.add(4);
+        s.add(2);s.add(19);
+        s.add(4);
+        s.add(2);s.add(19);
+        s.add(4);
+        s.add(2);s.add(19);
+        s.add(4);
+        s.add(2);
         s.add(1);
         s.add(6);
         s.add(11);
@@ -27,7 +38,7 @@ public class Tests {
         s.add(29);
         s.add(31);
         bitVector a = new bitVector(32, s);
-        System.out.println("a: " + a.getRep());
+        //System.out.println("a: " + a.getRep());
         Set<Integer> v = new HashSet<>();
         v.add(6);
         v.add(1);
@@ -37,7 +48,7 @@ public class Tests {
         v.add(19);
         v.add(16);
         bitVector c = new bitVector(48, v);
-        System.out.println("c: " + c.getRep());
+        //System.out.println("c: " + c.getRep());
 
 
         Feistel f = new Feistel(a, c);
