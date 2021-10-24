@@ -104,6 +104,15 @@ public class bitVector {
         return b;
     }
 
+    public static bitVector bitVectorFromString(String s){
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < s.length(); i++){
+            if (s.charAt(i) == '1') set.add(i+1);
+        }
+        bitVector b = new bitVector(s.length(), set);
+        return b;
+    }
+
     public static bitVector combineWith(bitVector b, bitVector c){
         Set<Integer> s = new HashSet<>();
         s.addAll(b.getPositions());

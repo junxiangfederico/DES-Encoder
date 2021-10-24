@@ -1,5 +1,5 @@
 # DES-Encoder
-DES-Encoder is a Java and JavaFX based DES-Encoder. DES-Encoder functionalities are accessible through a simple UI or through command codes using the Interpreter.
+DES-Encoder is a Java and JavaFX based DES-Encoder   DES-Encoder functionalities are accessible through a simple UI or through command codes using the Interpreter.
 ## About DES
 So what is DES, actually?  
 DES, or Data Encryption System is a symmetric (meaning that the encryption and decryption keys used are the same) encryption algorithm.

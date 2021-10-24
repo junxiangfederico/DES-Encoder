@@ -3,40 +3,38 @@ import java.util.*;
 
 public class Interpreter {
     public static void main(String[] args) {
-        Set<Integer> s = new HashSet<>();
-        s.add(3);
-        s.add(5);
-        s.add(6);
-        s.add(2);
-        s.add(8);
-        s.add(8);
-        s.add(10);
-        bitVector b = new bitVector(32, s);
-
-        Set<Integer> v = new HashSet<>();
-        v.add(6);
-        v.add(1);
-        v.add(1);
-        v.add(31);
-        v.add(17);
-        v.add(19);
-        v.add(16);
-        bitVector c = new bitVector(32, v);
-        XOROperator xor = new XOROperator();
-
-        System.out.println("b: " + b.getRep());
-
-        System.out.println("c: " +c.getRep());
-
-        bitVector d;
-        d = c.subSet(16, 1);
-        System.out.println(d.getRep());
-        d = c.subSet(16, 17);
-        System.out.println(d.getRep());
-
-        Feistel f = new Feistel(c,c);
-        //System.out.println(Feistel.Expander(c).getRep());
-        System.out.println(bitVector.combineWith(c, c).getRep());
+        System.out.println("Welcome, what would you like to do?");
+        System.out.println("1 calculate the Initial Permutation of a 64 bits sequence");
+        System.out.println("2 calculate the Inverse Permutation of a 64 bits sequence");
+        System.out.println("3 calculate the key value of a given round");
+        System.out.println("4 calculate the cipher value for a given round");
+        System.out.println("5 calculate the Feistel function output for a given round");
+        System.out.println("0 exit");
+        Set<Integer> set = new HashSet<>();
+        bitVector b;
+        String input = "";
+        Scanner s = new Scanner(System.in);
+        for (;;){
+            System.out.println("What would you like to do?");
+            input = s.next();
+            switch (input) {
+                case "1":
+                    System.out.println("Please enter a 64 bits sequence");
+                    input = s.next();
+                    b = bitVector.bitVectorFromString(input);
+                    System.out.println("The initial permutation of the entered bit sequence is \n" + Permutation.initialPermutation(b).getRep());
+                    break;
+                case "2":
+                    System.out.println("Please enter a 64 bits sequence");
+                    input = s.next();
+                    b = bitVector.bitVectorFromString(input);
+                    System.out.println("The inverse permutation of the entered bit sequence is \n" + Permutation.inversePermutation(b).getRep());
+                    break;
+                default:
+                    break;
+            }
+        }
+        
 
     }
 }
