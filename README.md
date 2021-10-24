@@ -14,7 +14,7 @@ DES uses block sizes and keys of 64 bits, however:
 DES is a 16 rounds Feistel cipher, which means that the encryption mechanisms is permutated 16 times using the Feistel function.
 
 ## How is data encrypted with DES?  
-<img src="https://user-images.githubusercontent.com/72081655/138575494-02165262-87dd-459d-959e-c82ea686b1d0.png" width=40% height=40%>  
+<img src="https://user-images.githubusercontent.com/72081655/138575494-02165262-87dd-459d-959e-c82ea686b1d0.png" width=30% height=30%>  
 1) Inputs first pass through an "Initial Permutation". (IP in "Figure 1")
 2) The 64 permutated bits are split into 2, 32 bits on the left and 32 bits on the right.
 3) These left and right bits are permutated with 16 Feistel rounds, using the input key  
@@ -34,4 +34,12 @@ The shifted halfs are the used as inputs for the next key generation round.
 
 
 ## So how does it all come together?  
-<img src="/assets/images/totdes.png" width=40% height=40%>
+<img src="/assets/images/totdes.png" width=60% height=60%>
+  
+## What can this program do?
+Given a plaintext and a key of 64 bits, this program is able to:
+- Calculate IP and IP^(-1) 
+- Calculate the key value of a given round
+- Calculate the output value for a given round
+- Calculate the Feistel function output for a given round
+- Codify a plaintext into a DES encrypted ciphertext for n rounds
