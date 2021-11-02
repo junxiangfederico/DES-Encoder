@@ -1,5 +1,14 @@
 # DES-Encoder
-DES-Encoder is a Java and JavaFX based DES-Encoder   DES-Encoder functionalities are accessible through a simple UI or through command codes using the Interpreter.
+DES-Encoder is a Java based DES-Encoder   DES-Encoder functionalities are accessible through a simple UI or through command codes using the Interpreter.
+
+## What can this program do?
+Given a plaintext and a key of 64 bits, this program is able to:
+- Calculate IP and IP^(-1) 
+- Calculate the key value of a given round
+- Calculate the output value for a given round
+- Calculate the Feistel function output for a given round
+- Codify a plaintext into a DES encrypted ciphertext for n rounds
+
 ## About DES
 So what is DES, actually?  
 DES, or Data Encryption System is a symmetric (meaning that the encryption and decryption keys used are the same) encryption algorithm.
@@ -36,10 +45,3 @@ The shifted halfs are the used as inputs for the next key generation round.
 ## So how does it all come together?  
 <img src="/assets/images/totdes.png" width=60% height=60%>
   
-## What can this program do?
-Given a plaintext and a key of 64 bits, this program is able to:
-- Calculate IP and IP^(-1) 
-- Calculate the key value of a given round
-- Calculate the output value for a given round
-- Calculate the Feistel function output for a given round
-- Codify a plaintext into a DES encrypted ciphertext for n rounds
