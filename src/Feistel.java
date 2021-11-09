@@ -4,17 +4,22 @@ import java.util.*;
 
 public class Feistel {
     
-    bitVector bits;
-    bitVector key;
+    private final bitVector bits;
+    private final bitVector key;
 
     public Feistel(bitVector b, bitVector k){
+        if (b.getSize() != 64 || k.getSize() != 48) throw new IllegalArgumentException("The Feistel function requires a 64 bits long bitVector and a 48 bits long key bitVector");
         bits = b;
         key = k;
-        System.out.println("bits values: " + b.getRep());
-        System.out.println("key values: " + k.getRep());
+        //System.out.println("bits values: " + b.getRep());
+        //System.out.println("key values: " + k.getRep());
 
     }
 
+    /**
+     * Feistel 32-bits expander function
+     * @param b a bitVector of size 32
+     */
     public static bitVector Expander(bitVector b) {
         Set<Integer> s = new HashSet<>();
         if (b.getSize() != 32) throw new IllegalArgumentException("The Feistel expansion formula requires a bitVector of size 32");

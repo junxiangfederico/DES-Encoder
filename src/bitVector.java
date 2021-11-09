@@ -48,6 +48,16 @@ public class bitVector {
         positions = new HashSet<>(Objects.requireNonNull(p, "Positions of a 1s inside of a bitVector cannot be null"));
     }
 
+    public bitVector(String s){
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < s.length(); i++){
+            if (s.charAt(i) == '1') set.add(i+1);
+        }
+        this.positions = set;
+        this.size = s.length();
+    }
+
+
     public int getSize() {
         return size;
     }
@@ -57,7 +67,6 @@ public class bitVector {
     }
 
     public void addPosition(int x){
-
         if (!positions.contains(x)) positions.add(x);
     }
 
@@ -104,15 +113,12 @@ public class bitVector {
         return b;
     }
 
-    public static bitVector bitVectorFromString(String s){
-        Set<Integer> set = new HashSet<>();
-        for (int i = 0; i < s.length(); i++){
-            if (s.charAt(i) == '1') set.add(i+1);
-        }
-        bitVector b = new bitVector(s.length(), set);
-        return b;
-    }
-
+    /**
+     * Concatenates 2 bitVectors 
+     * @param b the first bitvector
+     * @param c the second bitvector
+     * @return bitVector: b && c
+     */
     public static bitVector combineWith(bitVector b, bitVector c){
         Set<Integer> s = new HashSet<>();
         s.addAll(b.getPositions());
@@ -124,6 +130,10 @@ public class bitVector {
         return b;
     }
     
+    /**
+     * Provides a representation of the bitVector as a sequence of bits of 0 and 1
+     * @return
+     */
     public String getRep(){
         String output = "";
         for (int i = 1; i < size+1; i++){

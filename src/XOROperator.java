@@ -3,6 +3,9 @@ import java.util.*;
 
 public class XOROperator implements Operator{
 
+    /**
+     * An implementation of a bitWise XOR operator for 2 bitVectors
+     */
     @Override
     public bitVector compareTo(bitVector a, bitVector b) {
         if (a == null || b == null) throw new IllegalArgumentException("Argument bitVectors are null");
