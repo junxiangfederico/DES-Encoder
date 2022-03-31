@@ -1,5 +1,6 @@
 # DES-Encoder
-DES-Encoder is a Java based DES-Encoder   DES-Encoder functionalities are accessible through a simple UI or through command codes using the Interpreter.
+DES-Encoder is a Java based DES-Encoder   
+DES-Encoder functionalities are accessible through a simple UI or through command codes using the Interpreter.
 
 ## What can this program do?
 Given a plaintext and a key of 64 bits, this program is able to:
